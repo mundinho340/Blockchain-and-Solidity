@@ -15,3 +15,13 @@ contract Contract {
 		console.log( addresses.length ); // 5
 	}
 }
+
+// O tamanho é fornecido dinamicamente pela variável x.
+// Poderíamos potencialmente alterar essa variável e ela
+// criaria um array de endereços desse tamanho. 
+// Observe o uso do operador new aqui durante a inicialização!
+
+// Após a inicialização, os arrays de memória não podem ser redimensionados. 
+// Isso significa que mesmo no exemplo acima,
+// uma vez que o array de endereços é inicializado no tamanho 5,
+// ele permanecerá nesse tamanho durante toda a transação.

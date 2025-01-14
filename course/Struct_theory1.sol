@@ -12,3 +12,5 @@ struct Hero {
 	uint health;
 	bool inAir;
 }
+Hero hero = Hero(Directions.Up, 100, true);
+

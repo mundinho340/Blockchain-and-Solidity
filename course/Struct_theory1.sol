@@ -14,3 +14,8 @@ struct Hero {
 }
 Hero hero = Hero(Directions.Up, 100, true);
 
+console.log(hero.facing == Directions.Up);
+//true 
+console.log(hero.health); //100
+console.log(hero.inAir); //true
+

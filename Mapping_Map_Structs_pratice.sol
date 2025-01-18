@@ -9,3 +9,30 @@
 //Contract Security
 
 //Ensure that the createUser function is called with an address that is not associated with an active user. Otherwise, revert the call.
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Contract {
+	struct User {
+		uint balance;
+		bool isActive;
+	}
+
+	mapping(address => User) public users;
+
+	function createUser() external {
+		if(users[msg.sender].isActive ){
+			revert("Bro ja estas activo");
+		}
+		users[msg.sender].balance= 100;
+		users[msg.sender].isActive= true;
+		
+	
+	}
+
+
+}
+
+
+

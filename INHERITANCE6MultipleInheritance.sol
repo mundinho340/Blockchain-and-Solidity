@@ -7,3 +7,28 @@
    // Have this function transfer ownership from the current owner to the new owner passed in.
    // Ensure that this function can only be called by the current owner.
    
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+
+contract Ownable {
+    address public owner;
+    constructor (){
+        owner = msg.sender;
+    }
+    modifier onlyOwner {
+        require(owner == msg.sender, "Acesso negado, voce nao eh proprietario" );
+        _;
+    }
+}
+
+contract Transferable is Ownable {
+    function transfer(address newOwner) Ownable.onlyOwner external {
+        Ownable.owner = newOwner;
+    }
+}
+
+
+
+
+

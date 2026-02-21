@@ -1,16 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.4;
 
-contract Hero{
-    uint public health;
-    constructor(uint _health){
-        health = _health;
-    }
+interface Enemy {
+	function takeAttack(Hero.AttackTypes attackType) external;
+}
 
-    function takeDamage(uint damage) external {
-        health -= damage;
-    }
+contract Hero {
+	uint public health;
+	uint public energy = 10;
+	constructor(uint _health) {
+		health = _health;
+	}
 
-    enum AttackTypes {Brawl, Spell}
-    function attack(address enemy) public virtual;
+	enum AttackTypes { Brawl, Spell }
+	function attack(address) public virtual {
+		energy--;
+	}
 }

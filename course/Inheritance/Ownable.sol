@@ -12,3 +12,10 @@ contract Ownable {
     // }
 
 }
+
+contract Transferable is Ownable {
+    function transfer (address addr) onlyOwner public 
+    {
+        owner = addr;
+    }
+}

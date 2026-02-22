@@ -8,6 +8,7 @@ contract Mage is Hero(50){
     function attack(address enemy) override  public{
         Enemy enemyContract = Enemy(enemy);
         enemyContract.takeAttack(AttackTypes.Spell);
+        super.attack(enemy);
     }
 
 }
@@ -16,5 +17,6 @@ contract Warrior is Hero(200){
     function attack(address enemy) override public {
         Enemy enemyContract = Enemy(enemy);
         enemyContract.takeAttack(AttackTypes.Brawl);
+        super.attack(enemy);
     }
 }
